@@ -12,23 +12,20 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.AbstracPage;
 import commons.AbstractTest;
-import page.object.DeleteAccountPageObject;
 import page.object.HomePageObject;
-import page.object.LoginPageObject;
+
 import page.object.MobilePageObject;
 import page.object.MyAccountObject;
 import page.object.MyDashboardPage;
-import page.object.NewCustomerPageObject;
 import page.object.PageFactoryManager;
 import page.object.RegiterPageObject;
-import page.object.WithDrawPageObject;
+
 
 public class User_01_login_level_5_Assert extends AbstractTest {
 	WebDriver driver;
 	WebDriverWait wait;
-	private LoginPageObject loginPage;
+	
 	private HomePageObject homePage;
 	private RegiterPageObject registerPage;
 	private MobilePageObject mobilePage;
@@ -52,10 +49,13 @@ public class User_01_login_level_5_Assert extends AbstractTest {
         log.info("TC_01_Register - Step 01 :Open my account page ");
 		myAccountPage = homePage.getMyAccountPage(driver);
 		
-		
+		log.info("TC_01_Register - Step 02 :click To Button Create an Account");
 		myAccountPage.clickToDynamicButton(driver, "Create an Account");
 		registerPage = PageFactoryManager.openRegiterPage(driver);
+		
+		log.info("TC_01_Register - Step 03 :sendkey at filed firstname ");
 		registerPage.sendKeyToDynamicTextBox(driver, "viet", "firstname");
+		
 		registerPage.sendKeyToDynamicTextBox(driver, "Quoc", "middlename");
 		registerPage.sendKeyToDynamicTextBox(driver, "LE", "lastname");
 		registerPage.sendKeyToDynamicTextBox(driver, emailInput, "email");
@@ -83,10 +83,10 @@ public class User_01_login_level_5_Assert extends AbstractTest {
 	public void TC_03_verifyProductInfoMobile() {
 		
 		mobilePage= (MobilePageObject) myDashboardPage.getDynamicFromCommonLink(driver, "Mobile");
-		Assert.assertTrue( mobilePage.isDynamicProductImageDisplayed(driver, "Xperia"));
-		Assert.assertTrue(mobilePage.isDynamicProductNameDisplayed(driver, "Sony Xperia"));
-		Assert.assertTrue(mobilePage.isDynamicProductPriceDisplayed(driver, "Sony Xperia", "$100.00"));
-		Assert.assertTrue(mobilePage.isDynamicProductAddToCartButtonDisplayed(driver, "Sony Xperia"));
+		verifyTrue( mobilePage.isDynamicProductImageDisplayed(driver, "Xperia"));
+		verifyTrue(mobilePage.isDynamicProductNameDisplayed(driver, "Sony Xperia"));
+		verifyTrue(mobilePage.isDynamicProductPriceDisplayed(driver, "Sony Xperia", "$100.00"));
+		verifyTrue(mobilePage.isDynamicProductAddToCartButtonDisplayed(driver, "Sony Xperia"));
 	}
 	@Test
 	public void TC_04_verifyProductInfoTV() {

@@ -237,7 +237,7 @@ public class AbstracPage {
 		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_PRODUCT_PRICE, productPrice);
 		String actualPrice= getTextElement(driver, AbstractPageUI.DYNAMIC_PRODUCT_PRICE,productPrice);
 		System.out.println("actualPrice"+actualPrice+"************"+"expectPrice"+expectPrice+"******************");
-		return expectPrice.trim() == actualPrice.trim();
+		return expectPrice.trim().equals(actualPrice.trim());
 	}
 	public boolean isDynamicProductAddToCartButtonDisplayed(WebDriver driver, String productName) {
 		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_PRODUCT_ADD_TO_CART_BUTTON, productName);
