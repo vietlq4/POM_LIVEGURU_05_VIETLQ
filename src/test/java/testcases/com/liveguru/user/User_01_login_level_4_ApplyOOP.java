@@ -1,4 +1,4 @@
-package testcases.com.bankguru.user;
+package testcases.com.liveguru.user;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -43,43 +43,43 @@ public class User_01_login_level_4_ApplyOOP extends AbstractTest {
 		
 	}
 
-	@Test
-	public void TC_01_Register() {
-
-		loginPageUrl = loginPage.getLoginPageUrl();
-//  	  //Click here link to open Register Page
-		registerPage  = loginPage.clickHereLinkToOpenRegisterPage();
-//  	  //input random email
-		registerPage.inputEmailID();
-//  	  //click button signin 
-		registerPage.clickToSubmitButton();
-//  	  //Get text of User and pass
-		userID = registerPage.getUserID();
-		password = registerPage.getPassword();
-//    	
-	}
-
-	@Test
-	public void TC_02_Login() {
-		loginPage = registerPage.openLoginPage(loginPageUrl);
-		loginPage.inputUserNameTextbox(userID);
-		loginPage.inputPassWorkTextbox(password);
-		loginPage.clickLoginButton();
-		homePage = new HomePageObject(driver);
-	Assert.assertTrue(homePage.isHomePageDisplayed());
-	}
-	@Test
-	public void TC_03_OpenMutiPage() {
-		//home page => new customer page
-		newCustomerPage = homePage.openNewCustomerPage();
-		//newCustomerPage => withdraw
-		withDrawPage = newCustomerPage.openWithDrawPage();
-		//withDrawPage.
-	}
-	@AfterClass
-	public void afterClass() {
-		driver.quit();
-
-	}
+//	@Test
+//	public void TC_01_Register() {
+//
+//		loginPageUrl = loginPage.getLoginPageUrl();
+////  	  //Click here link to open Register Page
+//		registerPage  = loginPage.clickHereLinkToOpenRegisterPage();
+////  	  //input random email
+//		registerPage.inputEmailID();
+////  	  //click button signin 
+//		registerPage.clickToSubmitButton();
+////  	  //Get text of User and pass
+//		userID = registerPage.getUserID();
+//		password = registerPage.getPassword();
+////    	
+//	}
+//
+//	@Test
+//	public void TC_02_Login() {
+//		loginPage = registerPage.openLoginPage(loginPageUrl);
+//		loginPage.inputUserNameTextbox(userID);
+//		loginPage.inputPassWorkTextbox(password);
+//		loginPage.clickLoginButton();
+//		homePage = new HomePageObject(driver);
+//	Assert.assertTrue(homePage.isHomePageDisplayed());
+//	}
+//	@Test
+//	public void TC_03_OpenMutiPage() {
+//		//home page => new customer page
+//		newCustomerPage = homePage.openNewCustomerPage();
+//		//newCustomerPage => withdraw
+//		withDrawPage = newCustomerPage.openWithDrawPage();
+//		//withDrawPage.
+//	}
+//	@AfterClass
+//	public void afterClass() {
+//		driver.quit();
+//
+//	}
 
 }

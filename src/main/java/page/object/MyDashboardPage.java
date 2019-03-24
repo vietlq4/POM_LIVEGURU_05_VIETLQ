@@ -10,6 +10,7 @@ public class MyDashboardPage extends AbstracPage {
 		driver= mappingdriver;
 	}
 public boolean isMyDashboardPageDisplayed() {
+	
 	waitForControlVisible(driver,MyDashboardPageUI.MY_DASH_BOARD_LABEL);
 	return isControlDisplayed(driver,MyDashboardPageUI.MY_DASH_BOARD_LABEL);
 }

@@ -10,19 +10,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import page.object.HomePageObject;
+import interfaces.pagesUI.AbstractPageUI;
 import page.object.MyAccountObject;
 import page.object.PageFactoryManager;
-import page.object.RegiterPageObject;
-import page.object.WithDrawPageObject;
-import interfaces.pagesUI.AbstractPageUI;
 
 public class AbstracPage {
-	private int timeout = 30;
-
+	private int timeout = 50;
+	private WebDriverWait wait;
 // ************* Driver  ******************         
 	public void openAnyUrl(WebDriver driver, String url) {
 		driver.get(url);
@@ -132,19 +131,20 @@ public class AbstracPage {
 
 //	================ Wait ========================
 	public void waitForControlVisible(WebDriver driver, String locator) {
-		WebElement element = driver.findElement(By.xpath(locator));
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
-		wait.until(ExpectedConditions.visibilityOf(element));
+		 wait = new WebDriverWait(driver, timeout);
+		 System.out.println("waitForControlVisible locator " + locator);
+		// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 	}
-
+   
 	public void waitForControlVisible(WebDriver driver, String locator, String... valueDynamic) {
-		locator = String.format(locator, (Object[]) valueDynamic);
-		System.out.println("waitForControlVisible locator " + locator);
-		By element = By.xpath(locator);
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+		//locator = String.format(locator, (Object[]) valueDynamic);
+		String xpath = String.format(locator, (Object[]) valueDynamic);
+		System.out.println("waitForControlVisible locator " + xpath);
+		wait = new WebDriverWait(driver, timeout);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 	}
-
+     
+	
 	// ================Wait end==============
 	public boolean isControlUndisplayed(WebDriver driver, String locator) {
 		Date date = new Date();
@@ -255,15 +255,15 @@ public class AbstracPage {
 //		 return null;
 //	 }
 	public AbstracPage getDynamicPageFromHeaderAccount(WebDriver driver, String PageName) {
-		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_LABEL, "Account");
+		//waitForControlVisible(driver, AbstractPageUI.DYNAMIC_LABEL, "Account");
 		clickToElement(driver, AbstractPageUI.DYNAMIC_LABEL, "Account");
-		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_HEADER_ACCOUNT, PageName);
+		//waitForControlVisible(driver, AbstractPageUI.DYNAMIC_HEADER_ACCOUNT, PageName);
 		clickToElement(driver, AbstractPageUI.DYNAMIC_HEADER_ACCOUNT, PageName);
 		return null;
 	}
 
 	public MyAccountObject getMyAccountPage(WebDriver driver) {
-		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_FOTTER_LINK, "My Account");
+		//waitForControlVisible(driver, AbstractPageUI.DYNAMIC_FOTTER_LINK, "My Account");
 		clickToElement(driver, AbstractPageUI.DYNAMIC_FOTTER_LINK, "My Account");
 		return PageFactoryManager.getMyAccountPage(driver);
 	}
@@ -271,11 +271,10 @@ public class AbstracPage {
 	public AbstracPage getDynamicFromCommonLink(WebDriver driver, String PageName) {
 		// at the moment we using DYNAMIC_COMMON_LINK if in the future have any change
 		// we can using xpath DYNAMIC_LINK_ON_SIDEBAR
-		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_COMMON_LINK, PageName);
+		//waitForControlVisible(driver, AbstractPageUI.DYNAMIC_COMMON_LINK, PageName);
 		clickToElement(driver, AbstractPageUI.DYNAMIC_COMMON_LINK, PageName);
 		switch (PageName) {
 		case "Mobile":
-
 			return PageFactoryManager.getMobilePage(driver);
 		case "TV":
 			return PageFactoryManager.getMobilePage(driver);

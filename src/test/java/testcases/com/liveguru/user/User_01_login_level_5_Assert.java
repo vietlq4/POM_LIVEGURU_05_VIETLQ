@@ -3,8 +3,6 @@ package testcases.com.liveguru.user;
 import java.util.jar.Attributes.Name;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -40,6 +38,7 @@ public class User_01_login_level_5_Assert extends AbstractTest {
 	@BeforeClass
 	public void beforeClass(String browserName, String url) {
 		driver = openMultiBrowser(browserName, url);
+		System.out.println("browser : " + driver.toString());
 		homePage = PageFactoryManager.openHomePageObject(driver);
 
 	}
@@ -83,11 +82,12 @@ public class User_01_login_level_5_Assert extends AbstractTest {
 	public void TC_03_verifyProductInfoMobile() {
 		
 		mobilePage= (MobilePageObject) myDashboardPage.getDynamicFromCommonLink(driver, "Mobile");
+		mobilePage = PageFactoryManager.getMobilePage(driver);
 		verifyTrue( mobilePage.isDynamicProductImageDisplayed(driver, "Xperia"));
 		verifyTrue(mobilePage.isDynamicProductNameDisplayed(driver, "Sony Xperia"));
 		verifyTrue(mobilePage.isDynamicProductPriceDisplayed(driver, "Sony Xperia", "$100.00"));
 		verifyTrue(mobilePage.isDynamicProductAddToCartButtonDisplayed(driver, "Sony Xperia"));
-	}
+}
 	@Test
 	public void TC_04_verifyProductInfoTV() {
 		mobilePage= (MobilePageObject) myAccountPage.getDynamicFromCommonLink(driver, "TV");
@@ -96,6 +96,7 @@ public class User_01_login_level_5_Assert extends AbstractTest {
 		mobilePage.isDynamicProductPriceDisplayed(driver, "Samsung LCD", "$700.00");
 		mobilePage.isDynamicProductAddToCartButtonDisplayed(driver, "Samsung LCD");
 	}
+	
 	@AfterClass
 	public void afterClass() {
 		driver.quit();

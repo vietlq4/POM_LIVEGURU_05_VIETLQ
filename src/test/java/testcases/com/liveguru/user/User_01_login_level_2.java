@@ -51,13 +51,13 @@ public class User_01_login_level_2  extends AbstractTest{
 //    	password = registerPage.getPasswordText();
 //    	
 	  }
-@Test
-    public void TC_02_Login() {
-    	loginPage.inputUserNameTextbox("kdsjhjdhsajk");
-    	loginPage.inputPassWorkTextbox("dsfdsf");
-    	loginPage.clickLoginButton();
-        }
-    
+//@Test
+//    public void TC_02_Login() {
+//    	loginPage.inputUserNameTextbox("kdsjhjdhsajk");
+//    	loginPage.inputPassWorkTextbox("dsfdsf");
+//    	loginPage.clickLoginButton();
+//        }
+//    
     
    
      @AfterClass

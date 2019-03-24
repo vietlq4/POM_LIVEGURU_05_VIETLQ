@@ -8,28 +8,48 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class AbstractTest extends AbstracPage {
-	WebDriver driver;
 	protected final Log log;
+	private final String workingDir = System.getProperty("user.dir");
+	WebDriver driver;
+	
+	
+	
+	
 	protected AbstractTest() {
 		log = LogFactory.getLog(getClass());
 	}
 
 	public WebDriver openMultiBrowser(String browserName, String url) {
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\webdriver\\chromedriver.exe");
+			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			WebDriverManager.chromedriver().version("72.0").setup();
 			driver = new ChromeDriver();
+//			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("--incognito");
+//			options.addArguments("--disable-extensions");
+//			options.addArguments("disable-inforbars");
+//			options.addArguments("start-maximized");
+//			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//			driver = new ChromeDriver(capabilities);
 		} else if (browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", ".\\resources\\webdriver\\geckodriver.exe");
-			driver = new FirefoxDriver();
+			WebDriverManager.firefoxdriver().setup();
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "//FirefoxLog.txt");
+			FirefoxOptions options = new FirefoxOptions();
+			driver = new FirefoxDriver(options);
 		} else if (browserName.equals("headless")) {
-			System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\webdriver\\chromedriver.exe");
-			ChromeOptions options = new ChromeOptions();
+			   WebDriverManager.chromedriver().setup();
+			 ChromeOptions options = new ChromeOptions();
 			options.addArguments("headless");
-			options.addArguments("window-size=1920,1080");
+			options.addArguments("start-maximized");
 			driver = new ChromeDriver(options);
 		}
 		openAnyUrl(driver, url);

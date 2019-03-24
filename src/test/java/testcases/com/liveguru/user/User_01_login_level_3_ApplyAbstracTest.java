@@ -43,42 +43,42 @@ public class User_01_login_level_3_ApplyAbstracTest extends AbstractTest {
 		// registerPage = new RegiterPageObject();
 	}
 
-	@Test
-	public void TC_01_Register() {
-
-		loginPageUrl = loginPage.getLoginPageUrl();
-//  	  //Click here link to open Register Page
-		loginPage.clickHereLinkToOpenRegisterPage();
-//  	  //input random email
-		registerPage = new RegiterPageObject(driver);
-		registerPage.inputEmailID();
-//  	  //click button signin 
-		registerPage.clickToSubmitButton();
-//  	  //Get text of User and pass
-		userID = registerPage.getUserID();
-		password = registerPage.getPassword();
-//    	
-	}
-
-	@Test
-	public void TC_02_Login() {
-		registerPage.openLoginPage(loginPageUrl);
-		loginPage = new LoginPageObject(driver); // nhan lai driver
-		loginPage.inputUserNameTextbox(userID);
-		loginPage.inputPassWorkTextbox(password);
-		loginPage.clickLoginButton();
-		homePage = new HomePageObject(driver);
-	Assert.assertTrue(homePage.isHomePageDisplayed());
-	}
-	@Test
-	public void TC_03_OpenMutiPage() {
-		//home page => new customer page
-		homePage.openNewCustomerPage();
-		newCustomerPage = new NewCustomerPageObject(driver);
-		//newCustomerPage => wwithdraw
-		newCustomerPage.openWithDrawPage();
-		withDrawPage = new WithDrawPageObject(driver);
-	}
+//	@Test
+//	public void TC_01_Register() {
+//
+//		loginPageUrl = loginPage.getLoginPageUrl();
+////  	  //Click here link to open Register Page
+//		loginPage.clickHereLinkToOpenRegisterPage();
+////  	  //input random email
+//		registerPage = new RegiterPageObject(driver);
+//		registerPage.inputEmailID();
+////  	  //click button signin 
+//		registerPage.clickToSubmitButton();
+////  	  //Get text of User and pass
+//		userID = registerPage.getUserID();
+//		password = registerPage.getPassword();
+////    	
+//	}
+//
+//	@Test
+//	public void TC_02_Login() {
+//		registerPage.openLoginPage(loginPageUrl);
+//		loginPage = new LoginPageObject(driver); // nhan lai driver
+//		loginPage.inputUserNameTextbox(userID);
+//		loginPage.inputPassWorkTextbox(password);
+//		loginPage.clickLoginButton();
+//		homePage = new HomePageObject(driver);
+//	Assert.assertTrue(homePage.isHomePageDisplayed());
+//	}
+//	@Test
+//	public void TC_03_OpenMutiPage() {
+//		//home page => new customer page
+//		homePage.openNewCustomerPage();
+//		newCustomerPage = new NewCustomerPageObject(driver);
+//		//newCustomerPage => wwithdraw
+//		newCustomerPage.openWithDrawPage();
+//		withDrawPage = new WithDrawPageObject(driver);
+//	}
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
