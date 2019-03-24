@@ -1,0 +1,7 @@
+2019-03-24 00:39:24,898 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 01 :Open my account page 
+2019-03-24 00:39:25,684 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 02 :click To Button Create an Account
+2019-03-24 00:39:26,109 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 03 :sendkey at filed firstname 
+2019-03-24 00:39:31,877 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
+2019-03-24 00:39:31,919 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
+2019-03-24 00:39:31,964 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
+2019-03-24 00:39:32,007 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
