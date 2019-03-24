@@ -1,4 +1,4 @@
-package pages.ui;
+package interfaces.pagesUI;
 
 public class RegisterPageUI {
 	public static final String EMAIL_TEXTBOX = "//input[@name='emailid']";

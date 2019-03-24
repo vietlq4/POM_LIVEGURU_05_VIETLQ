@@ -1,4 +1,4 @@
-package testcases.com.bankguru.user;
+package testcases.com.liveguru.user;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

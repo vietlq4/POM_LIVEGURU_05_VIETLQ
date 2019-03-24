@@ -1,4 +1,4 @@
-package testcases.com.bankguru.user;
+package testcases.com.liveguru.user;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

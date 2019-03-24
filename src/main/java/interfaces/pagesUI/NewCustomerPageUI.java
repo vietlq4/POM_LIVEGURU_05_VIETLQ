@@ -1,4 +1,4 @@
-package pages.ui;
+package interfaces.pagesUI;
 
 public class NewCustomerPageUI {
 	public static final String ADDRESS_TEXTAREA = "//textarea[@name='addr']";

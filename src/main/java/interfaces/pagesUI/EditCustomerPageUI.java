@@ -1,4 +1,4 @@
-package pages.ui;
+package interfaces.pagesUI;
 
 public class EditCustomerPageUI {
 	
