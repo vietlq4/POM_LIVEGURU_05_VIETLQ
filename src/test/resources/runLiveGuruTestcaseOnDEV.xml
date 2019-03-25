@@ -16,6 +16,15 @@
 		</classes>
 
 	 </test>
+	<test name="Run on chrome headless">
+		<parameter name="browser" value="headless" />
+
+		<classes>
+			<class name="testcases.com.liveguru.user.User_01_login_level_5_Assert" />
+
+		</classes>
+    </test>
+
 
 	
 </suite> 

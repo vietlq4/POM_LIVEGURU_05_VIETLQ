@@ -103,7 +103,7 @@
                     </properties>
 
                     <suiteXmlFiles>
-                        <file>src/test/resources/runBankGuruTestcases_DynamicPage.xml</file>
+                        <file>src/test/resources/runLiveGuruTestcaseOnDEV.xml</file>
                     </suiteXmlFiles>
 
                 </configuration>

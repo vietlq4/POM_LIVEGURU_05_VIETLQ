@@ -20,7 +20,7 @@ import page.object.MyAccountObject;
 import page.object.PageFactoryManager;
 
 public class AbstracPage {
-	private int timeout = 50;
+	private int timeout = 20;
 	private WebDriverWait wait;
 // ************* Driver  ******************         
 	public void openAnyUrl(WebDriver driver, String url) {
@@ -54,6 +54,7 @@ public class AbstracPage {
 
 	public void clickToElement(WebDriver driver, String locator, String... valueDynamic) {
 		locator = String.format(locator, (Object[]) valueDynamic);
+		System.out.print("locator"+locator);
 		WebElement ele = driver.findElement(By.xpath(locator));
 		ele.click();
 	}
@@ -133,7 +134,7 @@ public class AbstracPage {
 	public void waitForControlVisible(WebDriver driver, String locator) {
 		 wait = new WebDriverWait(driver, timeout);
 		 System.out.println("waitForControlVisible locator " + locator);
-		// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 	}
    
 	public void waitForControlVisible(WebDriver driver, String locator, String... valueDynamic) {
@@ -141,7 +142,7 @@ public class AbstracPage {
 		String xpath = String.format(locator, (Object[]) valueDynamic);
 		System.out.println("waitForControlVisible locator " + xpath);
 		wait = new WebDriverWait(driver, timeout);
-	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 	}
      
 	

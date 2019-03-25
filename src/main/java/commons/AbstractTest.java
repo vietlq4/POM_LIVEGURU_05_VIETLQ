@@ -31,14 +31,13 @@ public class AbstractTest extends AbstracPage {
 		if (browserName.equals("chrome")) {
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			WebDriverManager.chromedriver().version("72.0").setup();
-			driver = new ChromeDriver();
-//			ChromeOptions options = new ChromeOptions();
+			ChromeOptions options = new ChromeOptions();
 //			options.addArguments("--incognito");
-//			options.addArguments("--disable-extensions");
-//			options.addArguments("disable-inforbars");
-//			options.addArguments("start-maximized");
-//			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-//			driver = new ChromeDriver(capabilities);
+			options.addArguments("--disable-extensions");
+			options.addArguments("disable-inforbars");
+			options.addArguments("start-maximized");
+			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+			driver = new ChromeDriver(capabilities);
 		} else if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
