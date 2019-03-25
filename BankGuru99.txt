@@ -1,7 +1,7 @@
-2019-03-25 00:23:37,601 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 01 :Open my account page 
-2019-03-25 00:23:38,299 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 02 :click To Button Create an Account
-2019-03-25 00:23:38,728 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 03 :sendkey at filed firstname 
-2019-03-25 00:23:44,098 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
-2019-03-25 00:23:44,121 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
-2019-03-25 00:23:44,168 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
-2019-03-25 00:23:44,197 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
+2019-03-25 12:25:53,278 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 01 :Open my account page 
+2019-03-25 12:25:54,094 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 02 :click To Button Create an Account
+2019-03-25 12:25:54,539 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - TC_01_Register - Step 03 :sendkey at filed firstname 
+2019-03-25 12:25:59,713 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
+2019-03-25 12:25:59,749 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
+2019-03-25 12:25:59,776 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
+2019-03-25 12:25:59,803 INFO  testcases.com.liveguru.user.User_01_login_level_5_Assert - ===PASSED===
