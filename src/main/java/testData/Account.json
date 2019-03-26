@@ -1,0 +1,10 @@
+{
+  "loginSucess": {
+    "userName": "John",
+    "password": "$2a$10$5xpWOscZ7wuF.6VpC10useCIDPVSU0iDavrd0pCthHmXfP818WQlm",
+    "mobileX":{
+              "name":"Sony Xperia",
+              "price":"$100.00"
+      }
+  },
+}

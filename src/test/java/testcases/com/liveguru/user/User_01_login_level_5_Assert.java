@@ -18,6 +18,7 @@ import page.object.MyAccountObject;
 import page.object.MyDashboardPage;
 import page.object.PageFactoryManager;
 import page.object.RegiterPageObject;
+import testData.Account;
 
 
 public class User_01_login_level_5_Assert extends AbstractTest {
@@ -70,8 +71,8 @@ public class User_01_login_level_5_Assert extends AbstractTest {
 	@Test
 	public void TC_02_Login() {
 		 myAccountPage = homePage.getMyAccountPage(driver);
-		 myAccountPage.sendKeyToDynamicTextBox(driver, emailInput, "login[username]");
-		 myAccountPage.sendKeyToDynamicTextBox(driver, "123123", "login[password]");
+		 myAccountPage.sendKeyToDynamicTextBox(driver, Account.login.USERNAME, "login[username]");
+		 myAccountPage.sendKeyToDynamicTextBox(driver, Account.login.USERNAME, "login[password]");
 		 myAccountPage.clickToDynamicButton(driver, "Login");
 		 myDashboardPage = PageFactoryManager.getMyDashboardPage(driver);
 		 Assert.assertTrue( myDashboardPage.isMyDashboardPageDisplayed());
