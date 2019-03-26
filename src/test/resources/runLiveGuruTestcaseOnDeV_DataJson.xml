@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="BANK GURU" parallel="false">
+	<parameter name="url" value="http://live.guru99.com/" />
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="commons.ExtentReportListener" />
+		<!-- <listener class-name="commons.ExtentReportListener" /> -->
+	</listeners>
+	<test name="Run on chrome">
+		<parameter name="browser" value="chrome" />
+		<parameter name="dataAccount" value=".\src\main\java\testData\Account.json" />
+		
+		<classes>
+			<class name="testcases.com.liveguru.user.User_01_login_level_6_dataJson" />
+
+		</classes>
+
+	</test>
+	
+</suite> 

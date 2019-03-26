@@ -1,10 +1,10 @@
 {
-  "loginSucess": {
-    "userName": "John",
-    "password": "$2a$10$5xpWOscZ7wuF.6VpC10useCIDPVSU0iDavrd0pCthHmXfP818WQlm",
+
+    "userName": "LE93993@hello.com",
+    "password": "123123",
     "mobileX":{
-              "name":"Sony Xperia",
-              "price":"$100.00"
-      }
-  },
+      "name":"Sony Xperia",
+      "price":"$100.00"
+
+  }
 }

@@ -19,23 +19,13 @@ import page.object.MyDashboardPage;
 import page.object.PageFactoryManager;
 import page.object.RegiterPageObject;
 import testData.Account;
+import testData.getAccountData;
 
 
 public class User_01_login_level_5_Assert extends AbstractTest {
-	WebDriver driver;
-	WebDriverWait wait;
-	
-	private HomePageObject homePage;
-	private RegiterPageObject registerPage;
-	private MobilePageObject mobilePage;
-	private MyAccountObject myAccountPage;
-	private MyDashboardPage myDashboardPage;
-	// private RegiterPageObject registerPage;
-     
-     String emailInput = "LE" + randomNumber() + "@hello.com";
-     
-      
-	@Parameters({ "browser", "url" })
+
+
+	@Parameters({ "browser", "url" ,""})
 	@BeforeClass
 	public void beforeClass(String browserName, String url) {
 		driver = openMultiBrowser(browserName, url);
@@ -103,5 +93,13 @@ public class User_01_login_level_5_Assert extends AbstractTest {
 		driver.quit();
 
 	}
+	WebDriver driver;
+	private HomePageObject homePage;
+	private RegiterPageObject registerPage;
+	private MobilePageObject mobilePage;
+	private MyAccountObject myAccountPage;
+	private MyDashboardPage myDashboardPage;
 
+
+	String emailInput = "LE" + randomNumber() + "@hello.com";
 }
